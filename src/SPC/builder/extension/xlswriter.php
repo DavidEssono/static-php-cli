@@ -30,7 +30,7 @@ class xlswriter extends Extension
     {
         $patched = parent::patchBeforeMake();
 
-        // Bundled minizip uses K&R C function declarations rejected by C23 (default on macOS with Xcode 16+)
+        // Remove when https://github.com/viest/php-ext-xlswriter/pull/560 is merged
         if (PHP_OS_FAMILY !== 'Windows') {
             GlobalEnvManager::putenv('SPC_CMD_VAR_PHP_MAKE_EXTRA_CFLAGS=' . getenv('SPC_CMD_VAR_PHP_MAKE_EXTRA_CFLAGS') . ' -std=gnu17');
             $patched = true;
@@ -49,6 +49,7 @@ class xlswriter extends Extension
         return $patched;
     }
 
+    // Remove when https://github.com/viest/php-ext-xlswriter/pull/560 is merged
     protected function getExtraEnv(): array
     {
         return ['CFLAGS' => '-std=gnu17'];
