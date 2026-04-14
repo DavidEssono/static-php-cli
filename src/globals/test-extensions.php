@@ -43,20 +43,20 @@ $no_strip = false;
 $upx = false;
 
 // whether to test frankenphp build, only available for macOS and linux
-$frankenphp = false;
+$frankenphp = true;
 
 // prefer downloading pre-built packages to speed up the build process
 $prefer_pre_built = true;
 
 // If you want to test your added extensions and libs, add below (comma separated, example `bcmath,openssl`).
 $extensions = match (PHP_OS_FAMILY) {
-    'Linux', 'Darwin' => 'decimal',
+    'Linux', 'Darwin' => 'openssl,brotli',
     'Windows' => 'bcmath,brotli,bz2,ctype,curl,dom,exif,fileinfo,filter,ftp,gd,iconv,intl,mbregex,mbstring,mysqli,mysqlnd,opcache,openssl,pdo,pdo_mysql,pdo_pgsql,pgsql,session,simdjson,simplexml,sodium,sqlite3,tokenizer,xml,xmlreader,xmlwriter,zip,zlib',
 };
 
 // If you want to test shared extensions, add them below (comma separated, example `bcmath,openssl`).
 $shared_extensions = match (PHP_OS_FAMILY) {
-    'Linux' => '',
+    'Linux' => 'zstd',
     'Darwin' => '',
     'Windows' => '',
 };
