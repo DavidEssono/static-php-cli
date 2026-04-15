@@ -1000,7 +1000,7 @@
     "openssl": {
         "type": "ghrel",
         "repo": "openssl/openssl",
-        "match": "openssl.+\\.tar\\.gz",
+        "match": "openssl-3.+\\.tar\\.gz",
         "prefer-stable": true,
         "alt": {
             "type": "filelist",
