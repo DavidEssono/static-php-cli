@@ -22,7 +22,7 @@ class decimal extends Extension
             ],
             [
                 'zend_module_entry php_decimal_module_entry',
-                'ZEND_GET_MODULE(php_decimal)'
+                'ZEND_GET_MODULE(php_decimal)',
             ]
         );
         FileSystem::replaceFileStr(
