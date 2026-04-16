@@ -44,6 +44,7 @@ trait krb5
             ->optionalLib('ldap', '--with-ldap', '--without-ldap')
             ->optionalLib('libedit', '--with-libedit', '--without-libedit')
             ->configure(...$args)
+            ->exec('find . -name Makefile -exec sed -i "s/-Werror=incompatible-pointer-types//g" {} +')
             ->make();
         $this->patchPkgconfPrefix([
             'krb5-gssapi.pc',
