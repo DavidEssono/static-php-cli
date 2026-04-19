@@ -6,7 +6,7 @@ on:
       version:
         required: true
         description: php version to compile
-        default: '8.3'
+        default: '8.4'
         type: choice
         options:
           - '8.4'
@@ -22,7 +22,7 @@ on:
         description: build phpmicro binary
         type: boolean
       extensions:
-        description: 'bcmath,bz2,ctype,curl,dom,fileinfo,filter,gd,iconv,intl,mbstring,mbregex,opcache,openssl,pdo,pdo_sqlite,phar,session,simplexml,sockets,sqlite3,tokenizer,xml,zip,zlib,pdo_pgsql'
+        description: 'bcmath,bz2,ctype,curl,dom,fileinfo,filter,gd,iconv,intl,mbstring,mbregex,opcache,openssl,pdo,pdo_sqlite,phar,session,simplexml,sockets,sqlite3,tokenizer,xml,zip,zlib,libxml,pdo_pgsql'
         required: true
         type: string
       prefer-pre-built:
